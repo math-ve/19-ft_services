@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ftps
+  labels:
+    app: ftps
+spec:
+  selector:
+    matchLabels:
+      app: ftps
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ftps
+    spec:
+      containers:
+        - image: img-ftps
+          imagePullPolicy: Never
+          name: container-mve-ftps
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-ftps
+  labels:
+    app: ftps
+  annotations:
+    metallb.universe.tf/allow-shared-ip: unifi-addr
+spec:
+  type: LoadBalancer
+  ports:
+    - name: ftps
+      targetPort: 21
+      port: 21
+    - name: ftps-data0
+      targetPort: 21000
+      port: 21000
+    - name: ftps-data1
+      targetPort: 21001
+      port: 21001
+    - name: ftps-data2
+      targetPort: 21002
+      port: 21002
+    - name: ftps-data3
+      targetPort: 21003
+      port: 21003
+    - name: ftps-data4
+      targetPort: 21004
+      port: 21004
+    - name: ftps-data5
+      targetPort: 21005
+      port: 21005
+  selector:
+    app: ftps
+  loadBalancerIP: 192.168.99.232

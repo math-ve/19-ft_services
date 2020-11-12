@@ -1,0 +1,6762 @@
+{
+	"annotations": {
+	  "list": [
+		{
+		  "builtIn": 1,
+		  "datasource": "-- Grafana --",
+		  "enable": true,
+		  "hide": true,
+		  "iconColor": "rgba(0, 211, 255, 1)",
+		  "name": "Annotations & Alerts",
+		  "type": "dashboard"
+		}
+	  ]
+	},
+	"description": "Fixed queries and added network metrics.",
+	"editable": true,
+	"gnetId": 5763,
+	"graphTooltip": 0,
+	"id": 2,
+	"iteration": 1599492516920,
+	"links": [],
+	"panels": [
+	  {
+		"collapsed": false,
+		"datasource": null,
+		"gridPos": {
+		  "h": 1,
+		  "w": 24,
+		  "x": 0,
+		  "y": 0
+		},
+		"id": 55,
+		"panels": [],
+		"repeat": null,
+		"title": "Information",
+		"type": "row"
+	  },
+	  {
+		"cacheTimeout": null,
+		"colorBackground": false,
+		"colorValue": false,
+		"colors": [
+		  "rgba(245, 54, 54, 0.9)",
+		  "rgba(237, 129, 40, 0.89)",
+		  "rgba(50, 172, 45, 0.97)"
+		],
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"format": "none",
+		"gauge": {
+		  "maxValue": 100,
+		  "minValue": 0,
+		  "show": false,
+		  "thresholdLabels": false,
+		  "thresholdMarkers": true
+		},
+		"gridPos": {
+		  "h": 7,
+		  "w": 4,
+		  "x": 0,
+		  "y": 1
+		},
+		"id": 49,
+		"interval": null,
+		"links": [],
+		"mappingType": 1,
+		"mappingTypes": [
+		  {
+			"name": "value to text",
+			"value": 1
+		  },
+		  {
+			"name": "range to text",
+			"value": 2
+		  }
+		],
+		"maxDataPoints": 100,
+		"nullPointMode": "connected",
+		"nullText": null,
+		"postfix": "",
+		"postfixFontSize": "50%",
+		"prefix": "",
+		"prefixFontSize": "50%",
+		"rangeMaps": [
+		  {
+			"from": "null",
+			"text": "N/A",
+			"to": "null"
+		  }
+		],
+		"sparkline": {
+		  "fillColor": "rgba(31, 118, 189, 0.18)",
+		  "full": false,
+		  "lineColor": "rgb(31, 120, 193)",
+		  "show": false
+		},
+		"tableColumn": "",
+		"targets": [
+		  {
+			"alias": "",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"n_images"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": "",
+		"title": "Images count",
+		"type": "singlestat",
+		"valueFontSize": "80%",
+		"valueMaps": [
+		  {
+			"op": "=",
+			"text": "N/A",
+			"value": "null"
+		  }
+		],
+		"valueName": "avg"
+	  },
+	  {
+		"cacheTimeout": null,
+		"colorBackground": false,
+		"colorValue": false,
+		"colors": [
+		  "rgba(245, 54, 54, 0.9)",
+		  "rgba(237, 129, 40, 0.89)",
+		  "rgba(50, 172, 45, 0.97)"
+		],
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"format": "decbytes",
+		"gauge": {
+		  "maxValue": 100,
+		  "minValue": 0,
+		  "show": false,
+		  "thresholdLabels": false,
+		  "thresholdMarkers": true
+		},
+		"gridPos": {
+		  "h": 7,
+		  "w": 4,
+		  "x": 4,
+		  "y": 1
+		},
+		"id": 52,
+		"interval": null,
+		"links": [],
+		"mappingType": 1,
+		"mappingTypes": [
+		  {
+			"name": "value to text",
+			"value": 1
+		  },
+		  {
+			"name": "range to text",
+			"value": 2
+		  }
+		],
+		"maxDataPoints": 100,
+		"nullPointMode": "connected",
+		"nullText": null,
+		"postfix": "",
+		"postfixFontSize": "50%",
+		"prefix": "",
+		"prefixFontSize": "50%",
+		"rangeMaps": [
+		  {
+			"from": "null",
+			"text": "N/A",
+			"to": "null"
+		  }
+		],
+		"sparkline": {
+		  "fillColor": "rgba(31, 118, 189, 0.18)",
+		  "full": false,
+		  "lineColor": "rgb(31, 120, 193)",
+		  "show": false
+		},
+		"tableColumn": "",
+		"targets": [
+		  {
+			"alias": "",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"memory_total"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": "",
+		"title": "Total memory",
+		"type": "singlestat",
+		"valueFontSize": "80%",
+		"valueMaps": [
+		  {
+			"op": "=",
+			"text": "N/A",
+			"value": "null"
+		  }
+		],
+		"valueName": "avg"
+	  },
+	  {
+		"cacheTimeout": null,
+		"colorBackground": false,
+		"colorValue": false,
+		"colors": [
+		  "rgba(245, 54, 54, 0.9)",
+		  "rgba(237, 129, 40, 0.89)",
+		  "rgba(50, 172, 45, 0.97)"
+		],
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"format": "none",
+		"gauge": {
+		  "maxValue": 100,
+		  "minValue": 0,
+		  "show": false,
+		  "thresholdLabels": false,
+		  "thresholdMarkers": true
+		},
+		"gridPos": {
+		  "h": 7,
+		  "w": 2,
+		  "x": 8,
+		  "y": 1
+		},
+		"id": 53,
+		"interval": null,
+		"links": [],
+		"mappingType": 1,
+		"mappingTypes": [
+		  {
+			"name": "value to text",
+			"value": 1
+		  },
+		  {
+			"name": "range to text",
+			"value": 2
+		  }
+		],
+		"maxDataPoints": 100,
+		"nullPointMode": "connected",
+		"nullText": null,
+		"postfix": "",
+		"postfixFontSize": "50%",
+		"prefix": "",
+		"prefixFontSize": "50%",
+		"rangeMaps": [
+		  {
+			"from": "null",
+			"text": "N/A",
+			"to": "null"
+		  }
+		],
+		"sparkline": {
+		  "fillColor": "rgba(31, 118, 189, 0.18)",
+		  "full": false,
+		  "lineColor": "rgb(31, 120, 193)",
+		  "show": false
+		},
+		"tableColumn": "",
+		"targets": [
+		  {
+			"alias": "",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"n_cpus"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": "",
+		"title": "CPUs",
+		"type": "singlestat",
+		"valueFontSize": "80%",
+		"valueMaps": [
+		  {
+			"op": "=",
+			"text": "N/A",
+			"value": "null"
+		  }
+		],
+		"valueName": "avg"
+	  },
+	  {
+		"columns": [],
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fontSize": "100%",
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 10,
+		  "y": 1
+		},
+		"id": 54,
+		"links": [],
+		"pageSize": null,
+		"scroll": true,
+		"showHeader": true,
+		"sort": {
+		  "col": 0,
+		  "desc": true
+		},
+		"styles": [
+		  {
+			"alias": "Time",
+			"align": "auto",
+			"dateFormat": "YYYY-MM-DD HH:mm:ss",
+			"pattern": "Time",
+			"type": "date"
+		  },
+		  {
+			"alias": "",
+			"align": "auto",
+			"colorMode": null,
+			"colors": [
+			  "rgba(245, 54, 54, 0.9)",
+			  "rgba(237, 129, 40, 0.89)",
+			  "rgba(50, 172, 45, 0.97)"
+			],
+			"decimals": 2,
+			"pattern": "/.*/",
+			"thresholds": [],
+			"type": "number",
+			"unit": "short"
+		  }
+		],
+		"targets": [
+		  {
+			"alias": "Containers",
+			"dsType": "influxdb",
+			"groupBy": [],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"n_containers"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Paused",
+			"dsType": "influxdb",
+			"groupBy": [],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"n_containers_paused"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Stopped",
+			"dsType": "influxdb",
+			"groupBy": [],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "C",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"n_containers_stopped"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Running",
+			"dsType": "influxdb",
+			"groupBy": [],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "D",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"n_containers_running"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"title": "Containers",
+		"transform": "timeseries_to_rows",
+		"type": "table-old"
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"fillGradient": 0,
+		"gridPos": {
+		  "h": 7,
+		  "w": 8,
+		  "x": 16,
+		  "y": 1
+		},
+		"hiddenSeries": false,
+		"id": 51,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 1,
+		"points": false,
+		"renderer": "flot",
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Count",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"n_containers"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Paused",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"n_containers_paused"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Stopped",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "C",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"n_containers_stopped"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Running",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "D",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"n_containers_running"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "Containers",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"fillGradient": 0,
+		"gridPos": {
+		  "h": 6,
+		  "w": 24,
+		  "x": 0,
+		  "y": 8
+		},
+		"hiddenSeries": false,
+		"id": 121,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 1,
+		"points": false,
+		"renderer": "flot",
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Recived",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"rx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Transmited",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "C",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"tx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "Network",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"format": "decbytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": false
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"collapsed": false,
+		"datasource": null,
+		"gridPos": {
+		  "h": 1,
+		  "w": 24,
+		  "x": 0,
+		  "y": 14
+		},
+		"id": 56,
+		"panels": [],
+		"repeat": "Container",
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-ftps_dep-ftps-594cf8c8d-jknls_default_a6db7ba6-8a94-4d72-8d0b-e89a3281289b_0",
+			"value": "k8s_dep-ftps_dep-ftps-594cf8c8d-jknls_default_a6db7ba6-8a94-4d72-8d0b-e89a3281289b_0"
+		  }
+		},
+		"title": "$Container",
+		"type": "row"
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"fillGradient": 0,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 0,
+		  "y": 15
+		},
+		"hiddenSeries": false,
+		"id": 1,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-ftps_dep-ftps-594cf8c8d-jknls_default_a6db7ba6-8a94-4d72-8d0b-e89a3281289b_0",
+			"value": "k8s_dep-ftps_dep-ftps-594cf8c8d-jknls_default_a6db7ba6-8a94-4d72-8d0b-e89a3281289b_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_cpu",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "CPU",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": "0",
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"fillGradient": 0,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 6,
+		  "y": 15
+		},
+		"hiddenSeries": false,
+		"id": 13,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-ftps_dep-ftps-594cf8c8d-jknls_default_a6db7ba6-8a94-4d72-8d0b-e89a3281289b_0",
+			"value": "k8s_dep-ftps_dep-ftps-594cf8c8d-jknls_default_a6db7ba6-8a94-4d72-8d0b-e89a3281289b_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "IO service recursive read",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_read"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "IO service recursive write",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_write"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "IO",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "bytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"fillGradient": 0,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 12,
+		  "y": 15
+		},
+		"hiddenSeries": false,
+		"id": 14,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-ftps_dep-ftps-594cf8c8d-jknls_default_a6db7ba6-8a94-4d72-8d0b-e89a3281289b_0",
+			"value": "k8s_dep-ftps_dep-ftps-594cf8c8d-jknls_default_a6db7ba6-8a94-4d72-8d0b-e89a3281289b_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_mem",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "Memory",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "percent",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"fillGradient": 0,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 18,
+		  "y": 15
+		},
+		"hiddenSeries": false,
+		"id": 85,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-ftps_dep-ftps-594cf8c8d-jknls_default_a6db7ba6-8a94-4d72-8d0b-e89a3281289b_0",
+			"value": "k8s_dep-ftps_dep-ftps-594cf8c8d-jknls_default_a6db7ba6-8a94-4d72-8d0b-e89a3281289b_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Recived",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"rx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Transmited",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"tx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "Network",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "decbytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": false
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"collapsed": false,
+		"datasource": null,
+		"gridPos": {
+		  "h": 1,
+		  "w": 24,
+		  "x": 0,
+		  "y": 22
+		},
+		"id": 122,
+		"panels": [],
+		"repeat": null,
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 56,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-grafana_dep-grafana-6cdc4f8b95-mqdv5_default_7ba52592-fac2-4c18-94a4-857f35c3a557_0",
+			"value": "k8s_dep-grafana_dep-grafana-6cdc4f8b95-mqdv5_default_7ba52592-fac2-4c18-94a4-857f35c3a557_0"
+		  }
+		},
+		"title": "$Container",
+		"type": "row"
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"fillGradient": 0,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 0,
+		  "y": 23
+		},
+		"hiddenSeries": false,
+		"id": 123,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 1,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-grafana_dep-grafana-6cdc4f8b95-mqdv5_default_7ba52592-fac2-4c18-94a4-857f35c3a557_0",
+			"value": "k8s_dep-grafana_dep-grafana-6cdc4f8b95-mqdv5_default_7ba52592-fac2-4c18-94a4-857f35c3a557_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_cpu",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "CPU",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": "0",
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"fillGradient": 0,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 6,
+		  "y": 23
+		},
+		"hiddenSeries": false,
+		"id": 124,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 13,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-grafana_dep-grafana-6cdc4f8b95-mqdv5_default_7ba52592-fac2-4c18-94a4-857f35c3a557_0",
+			"value": "k8s_dep-grafana_dep-grafana-6cdc4f8b95-mqdv5_default_7ba52592-fac2-4c18-94a4-857f35c3a557_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "IO service recursive read",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_read"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "IO service recursive write",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_write"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "IO",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "bytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"fillGradient": 0,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 12,
+		  "y": 23
+		},
+		"hiddenSeries": false,
+		"id": 125,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 14,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-grafana_dep-grafana-6cdc4f8b95-mqdv5_default_7ba52592-fac2-4c18-94a4-857f35c3a557_0",
+			"value": "k8s_dep-grafana_dep-grafana-6cdc4f8b95-mqdv5_default_7ba52592-fac2-4c18-94a4-857f35c3a557_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_mem",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "Memory",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "percent",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"fillGradient": 0,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 18,
+		  "y": 23
+		},
+		"hiddenSeries": false,
+		"id": 126,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 85,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-grafana_dep-grafana-6cdc4f8b95-mqdv5_default_7ba52592-fac2-4c18-94a4-857f35c3a557_0",
+			"value": "k8s_dep-grafana_dep-grafana-6cdc4f8b95-mqdv5_default_7ba52592-fac2-4c18-94a4-857f35c3a557_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Recived",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"rx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Transmited",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"tx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "Network",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "decbytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": false
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"collapsed": false,
+		"datasource": null,
+		"gridPos": {
+		  "h": 1,
+		  "w": 24,
+		  "x": 0,
+		  "y": 30
+		},
+		"id": 127,
+		"panels": [],
+		"repeat": null,
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 56,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-influxdb_dep-influxdb-578cd79889-qc2m8_default_0e47e0ee-6ea4-4deb-b40d-965f2a771ec4_0",
+			"value": "k8s_dep-influxdb_dep-influxdb-578cd79889-qc2m8_default_0e47e0ee-6ea4-4deb-b40d-965f2a771ec4_0"
+		  }
+		},
+		"title": "$Container",
+		"type": "row"
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 0,
+		  "y": 31
+		},
+		"id": 128,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 1,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-influxdb_dep-influxdb-578cd79889-qc2m8_default_0e47e0ee-6ea4-4deb-b40d-965f2a771ec4_0",
+			"value": "k8s_dep-influxdb_dep-influxdb-578cd79889-qc2m8_default_0e47e0ee-6ea4-4deb-b40d-965f2a771ec4_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_cpu",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "CPU",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": "0",
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 6,
+		  "y": 31
+		},
+		"id": 129,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 13,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-influxdb_dep-influxdb-578cd79889-qc2m8_default_0e47e0ee-6ea4-4deb-b40d-965f2a771ec4_0",
+			"value": "k8s_dep-influxdb_dep-influxdb-578cd79889-qc2m8_default_0e47e0ee-6ea4-4deb-b40d-965f2a771ec4_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "IO service recursive read",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_read"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "IO service recursive write",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_write"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "IO",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "bytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 12,
+		  "y": 31
+		},
+		"id": 130,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 14,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-influxdb_dep-influxdb-578cd79889-qc2m8_default_0e47e0ee-6ea4-4deb-b40d-965f2a771ec4_0",
+			"value": "k8s_dep-influxdb_dep-influxdb-578cd79889-qc2m8_default_0e47e0ee-6ea4-4deb-b40d-965f2a771ec4_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_mem",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Memory",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "percent",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 18,
+		  "y": 31
+		},
+		"id": 131,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 85,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-influxdb_dep-influxdb-578cd79889-qc2m8_default_0e47e0ee-6ea4-4deb-b40d-965f2a771ec4_0",
+			"value": "k8s_dep-influxdb_dep-influxdb-578cd79889-qc2m8_default_0e47e0ee-6ea4-4deb-b40d-965f2a771ec4_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Recived",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"rx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Transmited",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"tx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Network",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "decbytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": false
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"collapsed": false,
+		"datasource": null,
+		"gridPos": {
+		  "h": 1,
+		  "w": 24,
+		  "x": 0,
+		  "y": 38
+		},
+		"id": 132,
+		"panels": [],
+		"repeat": null,
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 56,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
+			"value": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
+		  }
+		},
+		"title": "$Container",
+		"type": "row"
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 0,
+		  "y": 39
+		},
+		"id": 133,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 1,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
+			"value": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_cpu",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "CPU",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": "0",
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 6,
+		  "y": 39
+		},
+		"id": 134,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 13,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
+			"value": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "IO service recursive read",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_read"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "IO service recursive write",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_write"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "IO",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "bytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 12,
+		  "y": 39
+		},
+		"id": 135,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 14,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
+			"value": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_mem",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Memory",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "percent",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 18,
+		  "y": 39
+		},
+		"id": 136,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 85,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
+			"value": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Recived",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"rx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Transmited",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"tx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Network",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "decbytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": false
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"collapsed": false,
+		"datasource": null,
+		"gridPos": {
+		  "h": 1,
+		  "w": 24,
+		  "x": 0,
+		  "y": 46
+		},
+		"id": 137,
+		"panels": [],
+		"repeat": null,
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 56,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-nginx_dep-nginx-5b45d864b7-bmt4w_default_b7f708bf-f06f-40d1-90fd-f851e9750f7c_0",
+			"value": "k8s_dep-nginx_dep-nginx-5b45d864b7-bmt4w_default_b7f708bf-f06f-40d1-90fd-f851e9750f7c_0"
+		  }
+		},
+		"title": "$Container",
+		"type": "row"
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 0,
+		  "y": 47
+		},
+		"id": 138,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 1,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-nginx_dep-nginx-5b45d864b7-bmt4w_default_b7f708bf-f06f-40d1-90fd-f851e9750f7c_0",
+			"value": "k8s_dep-nginx_dep-nginx-5b45d864b7-bmt4w_default_b7f708bf-f06f-40d1-90fd-f851e9750f7c_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_cpu",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "CPU",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": "0",
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 6,
+		  "y": 47
+		},
+		"id": 139,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 13,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-nginx_dep-nginx-5b45d864b7-bmt4w_default_b7f708bf-f06f-40d1-90fd-f851e9750f7c_0",
+			"value": "k8s_dep-nginx_dep-nginx-5b45d864b7-bmt4w_default_b7f708bf-f06f-40d1-90fd-f851e9750f7c_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "IO service recursive read",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_read"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "IO service recursive write",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_write"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "IO",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "bytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 12,
+		  "y": 47
+		},
+		"id": 140,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 14,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-nginx_dep-nginx-5b45d864b7-bmt4w_default_b7f708bf-f06f-40d1-90fd-f851e9750f7c_0",
+			"value": "k8s_dep-nginx_dep-nginx-5b45d864b7-bmt4w_default_b7f708bf-f06f-40d1-90fd-f851e9750f7c_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_mem",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Memory",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "percent",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 18,
+		  "y": 47
+		},
+		"id": 141,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 85,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-nginx_dep-nginx-5b45d864b7-bmt4w_default_b7f708bf-f06f-40d1-90fd-f851e9750f7c_0",
+			"value": "k8s_dep-nginx_dep-nginx-5b45d864b7-bmt4w_default_b7f708bf-f06f-40d1-90fd-f851e9750f7c_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Recived",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"rx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Transmited",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"tx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Network",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "decbytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": false
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"collapsed": false,
+		"datasource": null,
+		"gridPos": {
+		  "h": 1,
+		  "w": 24,
+		  "x": 0,
+		  "y": 54
+		},
+		"id": 142,
+		"panels": [],
+		"repeat": null,
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 56,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-phpmyadmin_dep-phpmyadmin-57ff5f4cd4-h6d27_default_11e928a4-5d77-4a81-bb86-6b4a98ad2236_0",
+			"value": "k8s_dep-phpmyadmin_dep-phpmyadmin-57ff5f4cd4-h6d27_default_11e928a4-5d77-4a81-bb86-6b4a98ad2236_0"
+		  }
+		},
+		"title": "$Container",
+		"type": "row"
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 0,
+		  "y": 55
+		},
+		"id": 143,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 1,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-phpmyadmin_dep-phpmyadmin-57ff5f4cd4-h6d27_default_11e928a4-5d77-4a81-bb86-6b4a98ad2236_0",
+			"value": "k8s_dep-phpmyadmin_dep-phpmyadmin-57ff5f4cd4-h6d27_default_11e928a4-5d77-4a81-bb86-6b4a98ad2236_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_cpu",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "CPU",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": "0",
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 6,
+		  "y": 55
+		},
+		"id": 144,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 13,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-phpmyadmin_dep-phpmyadmin-57ff5f4cd4-h6d27_default_11e928a4-5d77-4a81-bb86-6b4a98ad2236_0",
+			"value": "k8s_dep-phpmyadmin_dep-phpmyadmin-57ff5f4cd4-h6d27_default_11e928a4-5d77-4a81-bb86-6b4a98ad2236_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "IO service recursive read",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_read"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "IO service recursive write",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_write"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "IO",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "bytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 12,
+		  "y": 55
+		},
+		"id": 145,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 14,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-phpmyadmin_dep-phpmyadmin-57ff5f4cd4-h6d27_default_11e928a4-5d77-4a81-bb86-6b4a98ad2236_0",
+			"value": "k8s_dep-phpmyadmin_dep-phpmyadmin-57ff5f4cd4-h6d27_default_11e928a4-5d77-4a81-bb86-6b4a98ad2236_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_mem",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Memory",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "percent",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 18,
+		  "y": 55
+		},
+		"id": 146,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 85,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-phpmyadmin_dep-phpmyadmin-57ff5f4cd4-h6d27_default_11e928a4-5d77-4a81-bb86-6b4a98ad2236_0",
+			"value": "k8s_dep-phpmyadmin_dep-phpmyadmin-57ff5f4cd4-h6d27_default_11e928a4-5d77-4a81-bb86-6b4a98ad2236_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Recived",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"rx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Transmited",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"tx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Network",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "decbytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": false
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"collapsed": false,
+		"datasource": null,
+		"gridPos": {
+		  "h": 1,
+		  "w": 24,
+		  "x": 0,
+		  "y": 62
+		},
+		"id": 147,
+		"panels": [],
+		"repeat": null,
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 56,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-telegraf_dep-telegraf-8b8bf99f-fgft8_default_6ef42b91-90b3-46a9-af31-d1072e9b22a6_0",
+			"value": "k8s_dep-telegraf_dep-telegraf-8b8bf99f-fgft8_default_6ef42b91-90b3-46a9-af31-d1072e9b22a6_0"
+		  }
+		},
+		"title": "$Container",
+		"type": "row"
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 0,
+		  "y": 63
+		},
+		"id": 148,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 1,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-telegraf_dep-telegraf-8b8bf99f-fgft8_default_6ef42b91-90b3-46a9-af31-d1072e9b22a6_0",
+			"value": "k8s_dep-telegraf_dep-telegraf-8b8bf99f-fgft8_default_6ef42b91-90b3-46a9-af31-d1072e9b22a6_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_cpu",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "CPU",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": "0",
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 6,
+		  "y": 63
+		},
+		"id": 149,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 13,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-telegraf_dep-telegraf-8b8bf99f-fgft8_default_6ef42b91-90b3-46a9-af31-d1072e9b22a6_0",
+			"value": "k8s_dep-telegraf_dep-telegraf-8b8bf99f-fgft8_default_6ef42b91-90b3-46a9-af31-d1072e9b22a6_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "IO service recursive read",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_read"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "IO service recursive write",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_write"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "IO",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "bytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 12,
+		  "y": 63
+		},
+		"id": 150,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 14,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-telegraf_dep-telegraf-8b8bf99f-fgft8_default_6ef42b91-90b3-46a9-af31-d1072e9b22a6_0",
+			"value": "k8s_dep-telegraf_dep-telegraf-8b8bf99f-fgft8_default_6ef42b91-90b3-46a9-af31-d1072e9b22a6_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_mem",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Memory",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "percent",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 18,
+		  "y": 63
+		},
+		"id": 151,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 85,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-telegraf_dep-telegraf-8b8bf99f-fgft8_default_6ef42b91-90b3-46a9-af31-d1072e9b22a6_0",
+			"value": "k8s_dep-telegraf_dep-telegraf-8b8bf99f-fgft8_default_6ef42b91-90b3-46a9-af31-d1072e9b22a6_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Recived",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"rx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Transmited",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"tx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Network",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "decbytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": false
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"collapsed": false,
+		"datasource": null,
+		"gridPos": {
+		  "h": 1,
+		  "w": 24,
+		  "x": 0,
+		  "y": 70
+		},
+		"id": 152,
+		"panels": [],
+		"repeat": null,
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 56,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-wordpress_dep-wordpress-59c675c8f-5wszv_default_852c0f6c-1610-486b-a03a-f03075ea0992_0",
+			"value": "k8s_dep-wordpress_dep-wordpress-59c675c8f-5wszv_default_852c0f6c-1610-486b-a03a-f03075ea0992_0"
+		  }
+		},
+		"title": "$Container",
+		"type": "row"
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 0,
+		  "y": 71
+		},
+		"id": 153,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 1,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-wordpress_dep-wordpress-59c675c8f-5wszv_default_852c0f6c-1610-486b-a03a-f03075ea0992_0",
+			"value": "k8s_dep-wordpress_dep-wordpress-59c675c8f-5wszv_default_852c0f6c-1610-486b-a03a-f03075ea0992_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_cpu",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "CPU",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": "0",
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 6,
+		  "y": 71
+		},
+		"id": 154,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 13,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-wordpress_dep-wordpress-59c675c8f-5wszv_default_852c0f6c-1610-486b-a03a-f03075ea0992_0",
+			"value": "k8s_dep-wordpress_dep-wordpress-59c675c8f-5wszv_default_852c0f6c-1610-486b-a03a-f03075ea0992_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "IO service recursive read",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_read"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "IO service recursive write",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_blkio",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"io_service_bytes_recursive_write"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "IO",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "bytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 12,
+		  "y": 71
+		},
+		"id": 155,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 14,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-wordpress_dep-wordpress-59c675c8f-5wszv_default_852c0f6c-1610-486b-a03a-f03075ea0992_0",
+			"value": "k8s_dep-wordpress_dep-wordpress-59c675c8f-5wszv_default_852c0f6c-1610-486b-a03a-f03075ea0992_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Usage [%]",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_mem",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"usage_percent"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Memory",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "percent",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  },
+	  {
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "InfluxDB",
+		"fieldConfig": {
+		  "defaults": {
+			"custom": {}
+		  },
+		  "overrides": []
+		},
+		"fill": 1,
+		"gridPos": {
+		  "h": 7,
+		  "w": 6,
+		  "x": 18,
+		  "y": 71
+		},
+		"id": 156,
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
+		},
+		"lines": true,
+		"linewidth": 1,
+		"links": [],
+		"nullPointMode": "connected",
+		"percentage": false,
+		"pluginVersion": "7.1.5",
+		"pointradius": 5,
+		"points": false,
+		"renderer": "flot",
+		"repeatIteration": 1599492516920,
+		"repeatPanelId": 85,
+		"repeatedByRow": true,
+		"scopedVars": {
+		  "Container": {
+			"selected": false,
+			"text": "k8s_dep-wordpress_dep-wordpress-59c675c8f-5wszv_default_852c0f6c-1610-486b-a03a-f03075ea0992_0",
+			"value": "k8s_dep-wordpress_dep-wordpress-59c675c8f-5wszv_default_852c0f6c-1610-486b-a03a-f03075ea0992_0"
+		  }
+		},
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
+		"targets": [
+		  {
+			"alias": "Recived",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "A",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"rx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  },
+		  {
+			"alias": "Transmited",
+			"dsType": "influxdb",
+			"groupBy": [
+			  {
+				"params": [
+				  "$__interval"
+				],
+				"type": "time"
+			  },
+			  {
+				"params": [
+				  "null"
+				],
+				"type": "fill"
+			  }
+			],
+			"measurement": "docker_container_net",
+			"orderByTime": "ASC",
+			"policy": "default",
+			"refId": "B",
+			"resultFormat": "time_series",
+			"select": [
+			  [
+				{
+				  "params": [
+					"tx_bytes"
+				  ],
+				  "type": "field"
+				},
+				{
+				  "params": [],
+				  "type": "last"
+				}
+			  ]
+			],
+			"tags": [
+			  {
+				"key": "container_name",
+				"operator": "=~",
+				"value": "/^$Container$/"
+			  },
+			  {
+				"condition": "AND",
+				"key": "engine_host",
+				"operator": "=~",
+				"value": "/^$dockerhost$/"
+			  }
+			]
+		  }
+		],
+		"thresholds": [],
+		"timeFrom": null,
+		"timeShift": null,
+		"title": "Network",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"decimals": null,
+			"format": "decbytes",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": false
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
+	  }
+	],
+	"schemaVersion": 26,
+	"style": "dark",
+	"tags": [],
+	"templating": {
+	  "list": [
+		{
+		  "allValue": null,
+		  "current": {
+			"selected": false,
+			"text": "All",
+			"value": "$__all"
+		  },
+		  "datasource": "InfluxDB",
+		  "definition": "",
+		  "hide": 0,
+		  "includeAll": true,
+		  "label": "Container",
+		  "multi": true,
+		  "name": "Container",
+		  "options": [],
+		  "query": "show tag values from docker_container_cpu with key=\"container_name\"",
+		  "refresh": 1,
+		  "regex": "",
+		  "skipUrlSync": false,
+		  "sort": 0,
+		  "tagValuesQuery": "",
+		  "tags": [],
+		  "tagsQuery": "",
+		  "type": "query",
+		  "useTags": false
+		},
+		{
+		  "allValue": null,
+		  "current": {
+			"selected": false,
+			"text": "All",
+			"value": "$__all"
+		  },
+		  "datasource": "InfluxDB",
+		  "definition": "",
+		  "hide": 0,
+		  "includeAll": true,
+		  "label": "Docker host",
+		  "multi": false,
+		  "name": "dockerhost",
+		  "options": [],
+		  "query": "show tag values from docker with key=\"engine_host\"",
+		  "refresh": 1,
+		  "regex": "",
+		  "skipUrlSync": false,
+		  "sort": 0,
+		  "tagValuesQuery": "",
+		  "tags": [],
+		  "tagsQuery": "",
+		  "type": "query",
+		  "useTags": false
+		}
+	  ]
+	},
+	"time": {
+	  "from": "now-6h",
+	  "to": "now"
+	},
+	"timepicker": {
+	  "refresh_intervals": [
+		"5s",
+		"10s",
+		"30s",
+		"1m",
+		"5m",
+		"15m",
+		"30m",
+		"1h",
+		"2h",
+		"1d"
+	  ],
+	  "time_options": [
+		"5m",
+		"15m",
+		"1h",
+		"6h",
+		"12h",
+		"24h",
+		"2d",
+		"7d",
+		"30d"
+	  ]
+	},
+	"timezone": "",
+	"title": "Kubernetes Dashboards",
+	"uid": "jPqOU7MmkD",
+	"version": 1
+  }

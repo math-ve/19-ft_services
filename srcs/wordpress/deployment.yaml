@@ -1,0 +1,46 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    deployment.yaml                                    :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mvan-eyn <mvan-eyn@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/11/08 21:41:26 by mvan-eyn          #+#    #+#              #
+#    Updated: 2020/11/09 13:37:43 by mvan-eyn         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-wordpress
+  annotations:
+    metallb.universe.tf/allow-shared-ip: unifi-addr
+spec:
+  selector:
+    app: wordpress
+  type: LoadBalancer
+  ports:
+  - port: 5050
+    targetPort: 5050
+  loadBalancerIP: 192.168.99.232
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+      - name: wordpress
+        image: img-wordpress
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5050

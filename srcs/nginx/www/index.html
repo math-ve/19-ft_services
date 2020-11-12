@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+    <title>ft_services mvan-eyn</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="title">
+                <h1>FT_SERVICES</h1>
+                <h3>by mvan-eyn</h3>
+            </div>
+            <div class="buttons">
+                <div class="service-container">
+                    <h4 class="infos-title">WordPress</h4>
+                    <div class="infos">
+                        <p class="infos-label">Login</p>
+                        <p class="yellow">mvan-eyn</p>
+                    </div>
+                    <div class="infos">
+                        <p class="infos-label">Password</p>
+                        <p class="yellow">mvan-eyn6666@</p>
+                    </div>
+                    <a href="http://192.168.99.232:5050/wp-admin/">
+                        <div class="button">
+                            Go
+                        </div>
+                    </a>
+                </div>
+                <div class="service-container">
+                    <h4 class="infos-title">PhpMyAdmin</h4>
+                    <div class="infos">
+                        <p class="infos-label">Login</p>
+                        <p class="yellow">mvan-eyn</p>
+                    </div>
+                    <div class="infos">
+                        <p class="infos-label">Password</p>
+                        <p class="yellow">mvan-eyn6666@</p>
+                    </div>
+                    <a href="http://192.168.99.232:5000">
+                        <div class="button">
+                            Go
+                        </div>                
+                    </a>
+                </div>
+                <div class="service-container">
+                    <h4 class="infos-title">Grafana</h4>
+                    <div class="infos">
+                        <p class="infos-label">Login</p>
+                        <p class="yellow">admin</p>
+                    </div>
+                    <div class="infos">
+                        <p class="infos-label">Password</p>
+                        <p class="yellow">admin</p>
+                    </div>
+                    <a href="http://192.168.99.232:3000">
+                        <div class="button">
+                            Go
+                        </div>                
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script>
+
+        const tl = gsap.timeline();
+
+        tl.from('h1, h3',1.5,{y:-200, opacity:0, stagger:.1,ease:'power4'})
+        tl.from('.service-container',1,{y:100,opacity:0,stagger:.3}, '-=.5')
+
+    </script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color:rgb(93, 93, 93);
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+h3 {
+    color: #0DBBC1;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Montserrat', cursive;
+}
+
+.buttons {
+    display: flex;
+    width: 60%;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-container {
+    border: 2px solid white;
+    width: 20%;
+    padding: 40px;
+    box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.157);
+    border: 1px solid rgba(163, 163, 163, 0.185);
+}
+
+.infos-title {
+    font-family: 'Montserrat';
+    text-align: center;
+    color:rgb(93, 93, 93);
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+
+.service-container p{
+    font-family: 'Krona One', sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+.infos-label {
+    color:rgb(163, 163, 163);
+    margin-bottom: 5px;
+}
+
+.yellow {
+    color: #0DBBC1;
+    margin-bottom: 10px;
+}
+
+.button {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background: #0DBBC1;
+    width: 80%;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 5px;
+    transition: all .2s ease-in-out;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.button:hover {
+    color: #0DBBC1;
+    background: rgb(0, 0, 0);
+    transform: scale(1.1);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.513);
+}   
+</style>
+
+
+</body>
+</html>
