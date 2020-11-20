@@ -29,7 +29,7 @@ define( 'DB_USER', 'mvan-eyn' );
 define( 'DB_PASSWORD', 'mvan-eyn6666@' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'svc-mariadb.default.svc.cluster.local' );
+define( 'DB_HOST', 'svc-mysql.default.svc.cluster.local' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );

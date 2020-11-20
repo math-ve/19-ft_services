@@ -6,7 +6,7 @@
 #    By: mvan-eyn <mvan-eyn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/08 21:41:26 by mvan-eyn          #+#    #+#              #
-#    Updated: 2020/11/09 13:37:43 by mvan-eyn         ###   ########.fr        #
+#    Updated: 2020/11/14 08:06:21 by mvan-eyn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,8 @@ kind: Deployment
 metadata:
   name: wordpress
 spec:
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: wordpress

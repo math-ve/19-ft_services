@@ -1,0 +1,3 @@
+mysql << EOF
+SHOW DATABASES;
+EOF

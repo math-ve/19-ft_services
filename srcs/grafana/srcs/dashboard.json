@@ -3163,8 +3163,8 @@
 		"scopedVars": {
 		  "Container": {
 			"selected": false,
-			"text": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
-			"value": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
+			"text": "k8s_dep-mysql_dep-mysql-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
+			"value": "k8s_dep-mysql_dep-mysql-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
 		  }
 		},
 		"title": "$Container",
@@ -3214,8 +3214,8 @@
 		"scopedVars": {
 		  "Container": {
 			"selected": false,
-			"text": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
-			"value": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
+			"text": "k8s_dep-mysql_dep-mysql-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
+			"value": "k8s_dep-mysql_dep-mysql-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
 		  }
 		},
 		"seriesOverrides": [],
@@ -3359,8 +3359,8 @@
 		"scopedVars": {
 		  "Container": {
 			"selected": false,
-			"text": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
-			"value": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
+			"text": "k8s_dep-mysql_dep-mysql-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
+			"value": "k8s_dep-mysql_dep-mysql-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
 		  }
 		},
 		"seriesOverrides": [],
@@ -3554,8 +3554,8 @@
 		"scopedVars": {
 		  "Container": {
 			"selected": false,
-			"text": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
-			"value": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
+			"text": "k8s_dep-mysql_dep-mysql-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
+			"value": "k8s_dep-mysql_dep-mysql-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
 		  }
 		},
 		"seriesOverrides": [],
@@ -3699,8 +3699,8 @@
 		"scopedVars": {
 		  "Container": {
 			"selected": false,
-			"text": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
-			"value": "k8s_dep-mariadb_dep-mariadb-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
+			"text": "k8s_dep-mysql_dep-mysql-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0",
+			"value": "k8s_dep-mysql_dep-mysql-85575ccd77-9dg6q_default_821c89f4-956c-498e-bbca-56875a7cc880_0"
 		  }
 		},
 		"seriesOverrides": [],

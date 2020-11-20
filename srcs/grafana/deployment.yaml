@@ -6,7 +6,7 @@
 #    By: mvan-eyn <mvan-eyn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/02 09:36:57 by mvan-eyn          #+#    #+#              #
-#    Updated: 2020/11/09 12:38:25 by mvan-eyn         ###   ########.fr        #
+#    Updated: 2020/11/14 08:04:12 by mvan-eyn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ kind: Deployment
 metadata:
   name: grafana
 spec:
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: grafana

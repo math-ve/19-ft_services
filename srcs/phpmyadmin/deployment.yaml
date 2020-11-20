@@ -6,7 +6,7 @@
 #    By: mvan-eyn <mvan-eyn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/11 13:48:11 by mvan-eyn          #+#    #+#              #
-#    Updated: 2020/11/11 13:49:16 by mvan-eyn         ###   ########.fr        #
+#    Updated: 2020/11/14 08:05:42 by mvan-eyn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ kind: Deployment
 metadata:
   name: phpmyadmin
 spec:
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: phpmyadmin

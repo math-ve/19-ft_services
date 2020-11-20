@@ -6,17 +6,17 @@
 #    By: mvan-eyn <mvan-eyn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/31 12:54:08 by mvan-eyn          #+#    #+#              #
-#    Updated: 2020/11/06 18:35:02 by mvan-eyn         ###   ########.fr        #
+#    Updated: 2020/11/16 10:59:30 by mvan-eyn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pvc-maria
+  name: pvc-mysql
   namespace: default
   labels:
-    app: dep-maria
+    app: dep-mysql
 spec:
   accessModes:
   - ReadWriteOnce
@@ -27,37 +27,46 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mariadb
+  name: mysql
 spec:
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
-      app: mariadb
+      app: mysql
   template:
     metadata:
       labels:
-        app: mariadb
+        app: mysql
     spec:
       containers:
-      - name: mariadb
-        image: img-mariadb
+      - name: mysql
+        image: img-mysql
         imagePullPolicy: Never
+        livenessProbe:
+          exec:
+            command:
+            - /bin/ash
+            - /root/livenessprobe.sh
+          initialDelaySeconds: 5
+          periodSeconds: 5
         volumeMounts:
-          - name: pv-maria
+          - name: pv-mysql
             mountPath: /var/lib/mysql
         ports:
         - containerPort: 3306
       volumes:
-        - name: pv-maria
+        - name: pv-mysql
           persistentVolumeClaim:
-            claimName: pvc-maria
+            claimName: pvc-mysql
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-mariadb
+  name: svc-mysql
 spec:
   selector:
-    app: mariadb
+    app: mysql
   type: ClusterIP
   ports:
   - port: 3306

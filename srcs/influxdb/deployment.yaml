@@ -6,7 +6,7 @@
 #    By: mvan-eyn <mvan-eyn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/09 11:07:58 by mvan-eyn          #+#    #+#              #
-#    Updated: 2020/11/09 11:07:59 by mvan-eyn         ###   ########.fr        #
+#    Updated: 2020/11/16 11:02:31 by mvan-eyn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ kind: Deployment
 metadata:
   name: influxdb
 spec:
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: influxdb
@@ -44,6 +46,13 @@ spec:
           - name: pv-influxdb
             mountPath: /var/lib/influxdb
         imagePullPolicy: Never
+        livenessProbe:
+          exec:
+            command:
+            - /bin/ash
+            - /root/livenessprobe.sh
+          initialDelaySeconds: 5
+          periodSeconds: 5
         ports:
         - containerPort: 8086
       volumes:
